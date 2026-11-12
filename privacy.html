@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sear AI – Datenschutz / Privacy</title><link rel="stylesheet" href="style.css">
+</head>
+<body><main>
+<nav><a href="index.html">Sear AI</a><a href="terms.html">Nutzungsbedingungen</a><a href="support.html">Support</a></nav>
+<div class="lang"><a href="#de">Deutsch</a><a href="#en">English</a></div>
+
+<!--
+  Belege am Code (Stand 2026-11-12, Branch schatzsucher):
+  - Foto: Schatzsucher/Core/Appraisal/CloudAppraiseEngine.swift (JPEG, lange Kante 2048: Core/Support/ImageScaler.swift:12),
+    backend/src/appraise-handler.ts (nur OpenAI, kein Ausweich: backend/src/limits.ts APPRAISE), store:false in
+    backend/src/providers/openai.ts. Protokollzeile appraise-handler.ts:107 ohne Kennungen; nginx access_log off.
+  - Recherche: backend/src/research-handler.ts, providers/openai.ts research() mit Websuche, ohne Bild.
+  - Installations-ID: Header X-Install, Tageszähler im Speicher (backend/src/handler.ts MemoryCounter).
+  - Jahreskarte: Feld "pass", backend/src/ledger.ts (SQLite, Löschung 13 Monate nach letzter Nutzung).
+  - Gerät: Katalog (Core/Data/Catalog.swift), Tische im Schlüsselbund ThisDeviceOnly (Core/Data/KeychainCounter.swift:28).
+  - Server: IONOS, Deutschland (backend/deploy/README.md). Logs journald 14 Tage (backend/deploy/docker-compose.yml).
+-->
+
+<section id="de">
+<h1>Datenschutzerklärung</h1>
+<p class="muted">Stand: 12. November 2026</p>
+
+<h2>Verantwortlicher</h2>
+<p>Marc Hammerschmidt<br>Karolingerstraße 9a<br>55283 Nierstein<br>Deutschland<br>E-Mail: <a href="mailto:support@3d-voxelia.com">support@3d-voxelia.com</a></p>
+
+<h2>Kurzfassung</h2>
+<p class="card">Sear AI braucht kein Konto, zeigt keine Werbung und trackt nicht. Für eine Schätzung gehen dein Foto an unseren Dienst und an einen KI-Anbieter. Für die Preisrecherche gehen nur Name und Suchwörter eines Fundes dorthin, kein Foto. Unser Dienst speichert weder Foto noch Text. Dein Katalog bleibt auf deinem iPhone.</p>
+
+<h2>Welche Daten die App verarbeitet</h2>
+<h3>Foto bei einer Schätzung</h3>
+<p>Wenn du einen Tisch fotografierst oder ein Foto auswählst, sendet die App das Foto (verkleinert auf höchstens 2048 Pixel an der langen Kante), die Sprache und den gewählten Markt (ein Land, etwa Deutschland oder die Schweiz) an unseren Dienst. Der Dienst leitet Foto und Angaben an einen KI-Anbieter weiter (siehe Empfänger) und gibt die Funde mit Lage im Foto und geschätzter Preisspanne zurück. Technisch bedingt verarbeitet der Dienst dabei deine IP-Adresse, um die Antwort zurückzuschicken. Unser Dienst speichert weder Foto noch IP-Adresse; seine Protokolle enthalten nur Zahl der Funde, Markt, Art des Kontingents, Dauer und Kosten einer Anfrage und werden nach 14 Tagen gelöscht. Zweck: die Schätzung ausführen. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der App).</p>
+<h3>Preisrecherche</h3>
+<p>Für die Preisrecherche eines Fundes sendet die App dessen Namen, seine Art und einige Suchwörter (alles aus der Schätzung), die Sprache und den Markt an unseren Dienst, der sie an den KI-Anbieter weitergibt. Dieser sucht damit im Web nach Angeboten. Das Foto ist nicht Teil davon. Von den gefundenen Angeboten zeigt die App nur Preis, ob verkauft, und die Plattform. Speicherung und Protokolle wie bei der Schätzung. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
+<h3>Zufällige Installations-ID</h3>
+<p>Die App erzeugt beim ersten Start eine zufällige Kennung, die keinen Bezug zu dir oder deinem Gerät hat, und schickt sie mit jeder Anfrage mit. Der Dienst zählt damit die Fotos und Recherchen pro Tag, um Missbrauch zu begrenzen; die Zähler liegen nur im Arbeitsspeicher und gelten für einen Tag. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem fairen, bezahlbaren Dienst).</p>
+<h3>Jahreskarte</h3>
+<p>Hast du die Jahreskarte, schickt die App mit jeder Schätzung und Recherche und beim Abfragen deines Kontingents die Transaktionsnummer, die Apple für dein bezahltes Abo-Jahr vergibt. Damit zählt der Dienst die genutzten Tische dieses Abo-Jahres auf allen deinen Geräten. Gespeichert werden nur diese Nummer, der Zählerstand und der Zeitpunkt der letzten Nutzung, ohne Bezug zu deinem Namen oder deiner Apple-ID. Wir löschen den Eintrag 13 Monate nach der letzten Nutzung. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Erfüllung des Abos).</p>
+<h3>Auf deinem iPhone</h3>
+<p>Fotos, die du aufnimmst oder auswählst, verarbeitet die App auf deinem Gerät. Gemerkte Funde legt sie mit Foto und Schätzung im Katalog auf deinem iPhone ab. Einzelne Lose löschst du im Katalog, alle unter Einstellungen › Daten › Katalog leeren. Gratis- und gekaufte Tische liegen im Schlüsselbund deines iPhones und verlassen es nicht. Den gewählten Markt speichert die App in ihren Einstellungen.</p>
+<h3>Kamera und Fotos</h3>
+<p>Die App fragt erst nach dem Kamerazugriff, wenn du die Kamera einschaltest. Für die Mediathek nutzt sie die Fotoauswahl von iOS und sieht nur das Foto, das du auswählst.</p>
+<h3>Links zu eBay</h3>
+<p>Auf einer Los-Karte kannst du eBays Suche nach verkauften oder laufenden Angeboten öffnen. Der Link enthält nur die Suchwörter des Fundes. Was auf eBay geschieht, regelt eBays Datenschutzerklärung.</p>
+
+<h2>Käufe und Abos</h2>
+<p>Käufe und Abos wickelt Apple über den App Store ab. Ob ein Kauf gültig ist, prüft die App auf deinem iPhone; wir erhalten keine Zahlungsdaten. Für die Jahreskarte erhalten wir nur die oben beschriebene Transaktionsnummer. Für die Verarbeitung durch Apple gilt Apples Datenschutzrichtlinie.</p>
+
+<h2>Empfänger und Übermittlung in Drittländer</h2>
+<ul>
+<li><strong>Hosting des Dienstes:</strong> IONOS SE, Montabaur – Server in Deutschland. Der Dienst läuft dort und leitet Anfragen an den KI-Anbieter weiter.</li>
+<li><strong>OpenAI, L.L.C.</strong> (USA) – erkennt die Dinge im Foto, schätzt ihren Wert und recherchiert Preise im Web. OpenAI nutzt die Daten nicht zum Training und speichert die Antworten nicht; Protokolle zur Missbrauchserkennung bewahrt OpenAI bis zu 30 Tage auf.</li>
+<li><strong>Apple</strong> – App Store, Käufe und Abos.</li>
+</ul>
+<p>Die Übermittlung in die USA stützt sich auf die Datenverarbeitungsvereinbarung von OpenAI mit EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO).</p>
+
+<h2>Tracking und Werbung</h2>
+<p>Keine. Die App enthält keine Werbung, keine Analyse- oder Tracking-SDKs und verknüpft keine Daten mit anderen Apps oder Websites.</p>
+
+<h2>Deine Rechte</h2>
+<p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Du kannst dich ausserdem bei einer Datenschutz-Aufsichtsbehörde beschweren. Ein Konto gibt es nicht. Deinen Katalog löschst du jederzeit in der App; beim Löschen der App entfernt iOS alle App-Daten bis auf die Tische im Schlüsselbund.</p>
+
+<h2>Kinder</h2>
+<p>Sear AI richtet sich nicht gezielt an Kinder. Wir erheben wissentlich keine Daten von Kindern.</p>
+
+<h2>Änderungen</h2>
+<p>Wir passen diese Erklärung an, wenn sich die App ändert. Es gilt die hier veröffentlichte Fassung.</p>
+</section>
+
+<section id="en">
+<h1>Privacy Policy</h1>
+<p class="muted">Last updated: November 12, 2026</p>
+
+<h2>Controller</h2>
+<p>Marc Hammerschmidt<br>Karolingerstraße 9a<br>55283 Nierstein<br>Germany<br>Email: <a href="mailto:support@3d-voxelia.com">support@3d-voxelia.com</a></p>
+
+<h2>Summary</h2>
+<p class="card">Sear AI needs no account, shows no ads and does not track you. For an estimate, your photo goes to our service and to an AI provider. For a price lookup, only the name and search words of a find go there, never the photo. Our service stores neither the photo nor the text. Your catalog stays on your iPhone.</p>
+
+<h2>Data the app processes</h2>
+<h3>Photo for an estimate</h3>
+<p>When you photograph a table or pick a photo, the app sends the photo (scaled to at most 2048 pixels on the long side), the language and the selected market (a country, such as Germany or Switzerland) to our service. The service passes them to an AI provider (see recipients) and returns the finds with their position in the photo and an estimated price range. For technical reasons the service processes your IP address to send the answer back. Our service does not store the photo or your IP address; its logs contain only the number of finds, market, kind of allowance, duration and cost of a request and are deleted after 14 days. Purpose: running the estimate. Legal basis: Art. 6(1)(b) GDPR (providing the app).</p>
+<h3>Price lookup</h3>
+<p>To look up prices for a find, the app sends its name, its kind and a few search words (all taken from the estimate), the language and the market to our service, which passes them to the AI provider. The provider uses them to search the web for listings. The photo is not part of it. Of the listings found, the app shows only the price, whether it sold, and the platform. Storage and logs as for the estimate. Legal basis: Art. 6(1)(b) GDPR.</p>
+<h3>Random install ID</h3>
+<p>On first launch the app creates a random identifier that is not linked to you or your device and sends it with every request. The service uses it to count photos and lookups per day to limit abuse; the counters live only in memory and apply to one day. Legal basis: Art. 6(1)(f) GDPR (legitimate interest in a fair, affordable service).</p>
+<h3>Year pass</h3>
+<p>If you have the year pass, the app sends the transaction number Apple assigns to your paid subscription year with every estimate and lookup and when it checks your allowance. The service uses it to count the tables used in that subscription year across all your devices. Only this number, the count and the time of last use are stored, with no link to your name or Apple Account. We delete the entry 13 months after its last use. Legal basis: Art. 6(1)(b) GDPR (performing the subscription).</p>
+<h3>On your iPhone</h3>
+<p>Photos you take or pick are processed on your device. Finds you save are kept with photo and estimate in the catalog on your iPhone. Delete single lots in the catalog, or all of them under Settings › Data › Clear catalog. Free and purchased tables are kept in your iPhone’s keychain and never leave it. The app keeps the selected market in its settings.</p>
+<h3>Camera and photos</h3>
+<p>The app asks for camera access only when you turn on the camera. For your library it uses the iOS photo picker and only sees the photo you pick.</p>
+<h3>Links to eBay</h3>
+<p>On a lot card you can open eBay’s search for sold or current listings. The link contains only the find’s search words. eBay’s privacy policy governs what happens on eBay.</p>
+
+<h2>Purchases and subscriptions</h2>
+<p>Purchases and subscriptions are handled by Apple through the App Store. The app checks on your iPhone whether a purchase is valid; we receive no payment data. For the year pass we receive only the transaction number described above. Apple’s privacy policy applies to Apple’s processing.</p>
+
+<h2>Recipients and international transfers</h2>
+<ul>
+<li><strong>Hosting of the service:</strong> IONOS SE, Montabaur – server in Germany. The service runs there and forwards requests to the AI provider.</li>
+<li><strong>OpenAI, L.L.C.</strong> (USA) – recognizes the items in the photo, estimates their value and looks up prices on the web. OpenAI does not use the data for training and does not store the responses; it keeps abuse-monitoring logs for up to 30 days.</li>
+<li><strong>Apple</strong> – App Store, purchases and subscriptions.</li>
+</ul>
+<p>Transfers to the USA rely on OpenAI’s data processing agreement with EU Standard Contractual Clauses (Art. 46(2)(c) GDPR).</p>
+
+<h2>Tracking and advertising</h2>
+<p>None. The app contains no ads and no analytics or tracking SDKs, and links no data with other apps or websites.</p>
+
+<h2>Your rights</h2>
+<p>You have the right to access, rectify, erase, restrict and port your data and to object to processing. You may also lodge a complaint with a data protection supervisory authority. There is no account. You can delete your catalog in the app at any time; deleting the app removes all app data except the tables in your keychain.</p>
+
+<h2>Children</h2>
+<p>Sear AI is not directed at children. We do not knowingly collect data from children.</p>
+
+<h2>Changes</h2>
+<p>We update this policy when the app changes. The version published here applies.</p>
+</section>
+</main></body>
+</html>
